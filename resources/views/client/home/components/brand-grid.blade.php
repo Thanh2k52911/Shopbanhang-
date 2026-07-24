@@ -27,7 +27,7 @@
                         <div class="home-brand-card__logo">
                             @if ($brand->thumbnail)
                                 <img
-                                    src="{{ asset('images/' . $brand->thumbnail) }}"
+                                    src="{{ asset('storage/' . ltrim($brand->thumbnail, '/')) }}"
                                     alt="{{ $brand->name }}"
                                     loading="lazy"
                                 >

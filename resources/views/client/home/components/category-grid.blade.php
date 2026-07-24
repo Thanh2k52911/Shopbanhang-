@@ -27,7 +27,7 @@
                         <div class="home-category-card__media">
                             @if ($category->thumbnail)
                                 <img
-                                    src="{{ asset('images/' . $category->thumbnail) }}"
+                                   src="{{ asset('storage/' . ltrim($category->thumbnail, '/')) }}"
                                     alt="{{ $category->name }}"
                                     class="home-category-card__image"
                                     loading="lazy"
