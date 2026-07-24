@@ -1,0 +1,357 @@
+@import 'tailwindcss';
+
+/*
+|--------------------------------------------------------------------------
+| Admin base styles
+|--------------------------------------------------------------------------
+*/
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+}
+
+/*
+|--------------------------------------------------------------------------
+| Thanh cuộn Admin
+|--------------------------------------------------------------------------
+*/
+
+* {
+    scrollbar-width: thin;
+    scrollbar-color: #d1d5db transparent;
+}
+
+*::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+*::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color: #d1d5db;
+    border-radius: 9999px;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+    background-color: #9ca3af;
+}
+
+/*
+|--------------------------------------------------------------------------
+| AlpineJS
+|--------------------------------------------------------------------------
+|
+| Tránh hiện chớp nội dung trước khi AlpineJS khởi tạo.
+|
+*/
+
+[x-cloak] {
+    display: none !important;
+}
+
+/*
+|--------------------------------------------------------------------------
+| Form controls
+|--------------------------------------------------------------------------
+*/
+
+.admin-input,
+.admin-select,
+.admin-textarea {
+    width: 100%;
+    border: 1px solid #d1d5db;
+    border-radius: 0.5rem;
+    background-color: #ffffff;
+    padding: 0.625rem 0.75rem;
+    font-size: 0.875rem;
+    color: #111827;
+    outline: none;
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.admin-input:focus,
+.admin-select:focus,
+.admin-textarea:focus {
+    border-color: #ec4899;
+    box-shadow: 0 0 0 3px rgb(236 72 153 / 0.15);
+}
+
+.admin-input:disabled,
+.admin-select:disabled,
+.admin-textarea:disabled {
+    cursor: not-allowed;
+    background-color: #f3f4f6;
+    color: #9ca3af;
+}
+
+.admin-textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+/*
+|--------------------------------------------------------------------------
+| Buttons
+|--------------------------------------------------------------------------
+*/
+
+.admin-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    border-radius: 0.5rem;
+    padding: 0.625rem 1rem;
+    font-size: 0.875rem;
+    font-weight: 600;
+    transition:
+        background-color 0.2s ease,
+        color 0.2s ease,
+        border-color 0.2s ease,
+        opacity 0.2s ease;
+}
+
+.admin-btn:disabled {
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+.admin-btn-primary {
+    background-color: #db2777;
+    color: #ffffff;
+}
+
+.admin-btn-primary:hover {
+    background-color: #be185d;
+}
+
+.admin-btn-secondary {
+    border: 1px solid #d1d5db;
+    background-color: #ffffff;
+    color: #374151;
+}
+
+.admin-btn-secondary:hover {
+    background-color: #f9fafb;
+}
+
+.admin-btn-danger {
+    background-color: #dc2626;
+    color: #ffffff;
+}
+
+.admin-btn-danger:hover {
+    background-color: #b91c1c;
+}
+
+/*
+|--------------------------------------------------------------------------
+| Cards
+|--------------------------------------------------------------------------
+*/
+
+.admin-card {
+    border: 1px solid #e5e7eb;
+    border-radius: 0.75rem;
+    background-color: #ffffff;
+    box-shadow: 0 1px 2px rgb(0 0 0 / 0.04);
+}
+
+/*
+|--------------------------------------------------------------------------
+| Tables
+|--------------------------------------------------------------------------
+*/
+
+.admin-table-wrapper {
+    overflow-x: auto;
+    border: 1px solid #e5e7eb;
+    border-radius: 0.75rem;
+    background-color: #ffffff;
+}
+
+.admin-table {
+    width: 100%;
+    border-collapse: collapse;
+    white-space: nowrap;
+}
+
+.admin-table thead {
+    background-color: #f9fafb;
+}
+
+.admin-table th {
+    padding: 0.75rem 1rem;
+    text-align: left;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #6b7280;
+}
+
+.admin-table td {
+    border-top: 1px solid #e5e7eb;
+    padding: 0.875rem 1rem;
+    font-size: 0.875rem;
+    color: #374151;
+}
+
+/*
+|--------------------------------------------------------------------------
+| Badges
+|--------------------------------------------------------------------------
+*/
+
+.admin-badge {
+    display: inline-flex;
+    align-items: center;
+    border-radius: 9999px;
+    padding: 0.25rem 0.625rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+}
+
+.admin-badge-success {
+    background-color: #dcfce7;
+    color: #15803d;
+}
+
+.admin-badge-warning {
+    background-color: #fef3c7;
+    color: #b45309;
+}
+
+.admin-badge-danger {
+    background-color: #fee2e2;
+    color: #b91c1c;
+}
+
+.admin-badge-info {
+    background-color: #dbeafe;
+    color: #1d4ed8;
+}
+
+.admin-badge-neutral {
+    background-color: #f3f4f6;
+    color: #4b5563;
+}
+
+/*
+|--------------------------------------------------------------------------
+| Banner admin form
+|--------------------------------------------------------------------------
+*/
+
+.banner-admin-form {
+    align-items: start;
+}
+
+.banner-admin-form section {
+    min-width: 0;
+}
+
+.banner-admin-form label {
+    line-height: 1.4;
+}
+
+.banner-admin-form .admin-input,
+.banner-admin-form .admin-select,
+.banner-admin-form .admin-textarea,
+.admin-file-input {
+    box-sizing: border-box;
+}
+
+.admin-file-input {
+    display: block;
+    width: 100%;
+    min-height: 46px;
+    overflow: hidden;
+    border: 1px solid #d1d5db;
+    border-radius: 0.5rem;
+    background-color: #ffffff;
+    color: #374151;
+    font-size: 0.875rem;
+    cursor: pointer;
+}
+
+.admin-file-input::file-selector-button {
+    min-height: 44px;
+    margin-right: 0.85rem;
+    border: 0;
+    border-right: 1px solid #fbcfe8;
+    padding: 0 1rem;
+    background-color: #fdf2f8;
+    color: #be185d;
+    font: inherit;
+    font-weight: 700;
+    cursor: pointer;
+    transition:
+        background-color 0.2s ease,
+        color 0.2s ease;
+}
+
+.admin-file-input:hover::file-selector-button {
+    background-color: #fce7f3;
+    color: #9d174d;
+}
+
+.admin-file-input:focus {
+    outline: none;
+    border-color: #ec4899;
+    box-shadow: 0 0 0 3px rgb(236 72 153 / 15%);
+}
+
+@media (max-width: 1535px) {
+    .banner-admin-form > aside {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        grid-column: 1 / -1;
+        gap: 1.25rem;
+    }
+}
+
+@media (max-width: 900px) {
+    .banner-admin-form > aside {
+        grid-template-columns: 1fr;
+    }
+}
+
+/*
+|--------------------------------------------------------------------------
+| Khôi phục giao diện biểu mẫu Admin toàn hệ thống
+|--------------------------------------------------------------------------
+*/
+*,*::before,*::after{box-sizing:border-box}
+main{min-width:0}
+main .grid>*,main .flex>*{min-width:0}
+main :where(input:not([type="hidden"],[type="checkbox"],[type="radio"],[type="range"],[type="color"],[type="submit"],[type="button"],[type="reset"],[type="image"]),select,textarea){width:100%;max-width:100%;border:1px solid #d1d5db;border-radius:.5rem;background:#fff;color:#111827;outline:none;transition:border-color .2s ease,box-shadow .2s ease,background-color .2s ease}
+main :where(input:not([type="hidden"],[type="checkbox"],[type="radio"],[type="range"],[type="color"],[type="submit"],[type="button"],[type="reset"],[type="image"],[type="file"]),select){min-height:44px;padding:.625rem .875rem}
+main textarea{min-height:110px;padding:.75rem .875rem;resize:vertical}
+main select{cursor:pointer}
+main :where(input,select,textarea)::placeholder{color:#9ca3af;opacity:1}
+main :where(input:not([type="hidden"],[type="checkbox"],[type="radio"],[type="range"],[type="color"],[type="submit"],[type="button"],[type="reset"],[type="image"]),select,textarea):focus{border-color:#ec4899;box-shadow:0 0 0 3px rgb(236 72 153 / 15%)}
+main :where(input,select,textarea):disabled,main :where(input,select,textarea)[readonly]{cursor:not-allowed;background:#f3f4f6;color:#6b7280}
+main input[type="date"],main input[type="datetime-local"],main input[type="time"],main input[type="month"]{color-scheme:light}
+main input[type="file"]{min-height:46px;overflow:hidden;padding:0;color:#4b5563;cursor:pointer}
+main input[type="file"]::file-selector-button{min-height:44px;margin-right:.85rem;border:0;border-right:1px solid #fbcfe8;padding:0 1rem;background:#fdf2f8;color:#be185d;font:inherit;font-weight:700;cursor:pointer}
+main input[type="file"]:hover::file-selector-button{background:#fce7f3}
+main input[type="checkbox"],main input[type="radio"]{accent-color:#db2777}
+.admin-responsive-sidebar-layout{align-items:start}
+@media(max-width:1535px){.admin-responsive-sidebar-layout{grid-template-columns:minmax(0,1fr)!important}.admin-responsive-sidebar-layout>aside{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1.25rem}}
+@media(max-width:900px){.admin-responsive-sidebar-layout>aside{grid-template-columns:minmax(0,1fr)}}
+main table{max-width:100%}
+main .overflow-x-auto{max-width:100%}
+main form section.rounded-xl.border.bg-white,main form .rounded-xl.border.bg-white{box-shadow:0 1px 3px rgb(15 23 42 / 6%)}
+main button,main a[class*="rounded"]{max-width:100%}
+.newsletter-admin-form-grid>*,.settings-admin-row,.settings-admin-row>*{min-width:0}
+
