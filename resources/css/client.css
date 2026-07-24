@@ -9226,6 +9226,152 @@ body.has-saved-coupon-modal {
     }
 }
 
+/* Middle banners */
+.home-middle-banners {
+    padding: 3rem 0;
+    background-color: #ffffff;
+}
+
+.home-middle-banners__list {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+}
+
+.home-middle-banner {
+    position: relative;
+    display: block;
+    min-height: 280px;
+    overflow: hidden;
+    border-radius: 1.5rem;
+    background-color: #fce7f3;
+    color: #ffffff;
+    text-decoration: none;
+    box-shadow: 0 12px 32px rgb(17 24 39 / 10%);
+}
+
+.home-middle-banner picture {
+    position: absolute;
+    inset: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.home-middle-banner picture::after {
+    position: absolute;
+    inset: 0;
+    content: '';
+    background:
+        linear-gradient(
+            90deg,
+            rgb(17 24 39 / 68%) 0%,
+            rgb(17 24 39 / 35%) 48%,
+            transparent 78%
+        );
+}
+
+.home-middle-banner img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.home-middle-banner:hover img {
+    transform: scale(1.035);
+}
+
+.home-middle-banner__overlay {
+    position: relative;
+    z-index: 1;
+    width: min(560px, 70%);
+    min-height: 280px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+    padding: 2.5rem;
+}
+
+.home-middle-banner__overlay h2 {
+    margin: 0;
+    color: #ffffff;
+    font-size: clamp(1.8rem, 4vw, 3rem);
+    font-weight: 800;
+    line-height: 1.15;
+}
+
+.home-middle-banner__overlay p {
+    margin: 0.75rem 0 0;
+    color: #fdf2f8;
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+.home-middle-banner__overlay span {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1.25rem;
+    padding: 0.75rem 1.4rem;
+    border-radius: 999px;
+    background-color: #ec4899;
+    color: #ffffff;
+    font-weight: 800;
+    transition:
+        background-color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.home-middle-banner:hover .home-middle-banner__overlay span {
+    background-color: #db2777;
+    transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+    .home-middle-banners {
+        padding: 2rem 0;
+    }
+
+    .home-middle-banner {
+        min-height: 240px;
+        border-radius: 1.1rem;
+    }
+
+    .home-middle-banner__overlay {
+        width: 80%;
+        min-height: 240px;
+        padding: 1.75rem;
+    }
+}
+
+@media (max-width: 520px) {
+    .home-middle-banner {
+        min-height: 220px;
+    }
+
+    .home-middle-banner picture::after {
+        background: rgb(17 24 39 / 50%);
+    }
+
+    .home-middle-banner__overlay {
+        width: 100%;
+        min-height: 220px;
+        padding: 1.25rem;
+        text-align: center;
+        align-items: center;
+    }
+
+    .home-middle-banner__overlay h2 {
+        font-size: 1.55rem;
+    }
+
+    .home-middle-banner__overlay p {
+        font-size: 0.9rem;
+    }
+}
 /* =========================================================
    MUA NGAY
    ========================================================= */

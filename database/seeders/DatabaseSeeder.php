@@ -27,7 +27,7 @@ class DatabaseSeeder extends Seeder
             VariantValueSeeder::class,
 
             // Sản phẩm
-            ProductSeeder::class,
+
             ProductSeeder::class,
             ProductImageSeeder::class,
             ProductVideoSeeder::class,
